@@ -28,3 +28,7 @@ JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/)
 https://www.jetbrains.com/help/idea/compiling-applications.html#compile_before_launch
 
 After successful jar file creation, the jar file would be found in out/artifact/. Copy the jar file and replace it with the jar file in the folder named as runner. And rerun by double clicking the batch file.
+
+### Privacy and Copyrights
+
+All the libraries used in the project doesn't belongs to be and haven't been developed by me. This project is used for helping the community and no monetary benefit is been obtained from the usage of those libraries.
