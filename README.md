@@ -22,3 +22,9 @@ JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/)
 
 1. add following to virtual machine argument
   --module-path Path_to\javafx-sdk-18.0.2\lib --add-modules=javafx.controls,javafx.fxml
+  
+### Create Jar File
+
+https://www.jetbrains.com/help/idea/compiling-applications.html#compile_before_launch
+
+After successful jar file creation, the jar file would be found in out/artifact/. Copy the jar file and replace it with the jar file in the folder named as runner. And rerun by double clicking the batch file.
