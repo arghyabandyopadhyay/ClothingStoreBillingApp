@@ -4,7 +4,7 @@
 
 JDK: openjdk-18.0.2
 
-JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/
+JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/)
 
 ### Try running application
 
