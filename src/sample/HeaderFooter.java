@@ -7,6 +7,7 @@ import static java.lang.Math.ceil;
 import static sample.PDFCreator.*;
 
 class HeaderFooter extends PdfPageEventHelper {
+
     /** The header/footer text. */
     String header;
     /** The template with the total number of pages. */
@@ -40,7 +41,7 @@ class HeaderFooter extends PdfPageEventHelper {
         table.setLockedWidth(true);
         table.getDefaultCell().setBorder(Rectangle.NO_BORDER);
 
-        PdfPCell cell1 = new PdfPCell(new Phrase("GSTIN:CompaniesGSTINNo",PDFCreator.NORMAL_FONT));
+        PdfPCell cell1 = new PdfPCell(new Phrase("GSTIN:"+Main.gstin,PDFCreator.NORMAL_FONT));
         cell1.setHorizontalAlignment(0);
         cell1.setBorder(Rectangle.NO_BORDER);
         table.addCell(cell1);
@@ -49,13 +50,13 @@ class HeaderFooter extends PdfPageEventHelper {
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(1);
         table.addCell(cell1);
-        cell1=new PdfPCell(new Phrase("CONTACT:Contact no 1",PDFCreator.NORMAL_FONT));
+        cell1=new PdfPCell(new Phrase("CONTACT:"+Main.contactNo1,PDFCreator.NORMAL_FONT));
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(2);
         table.addCell(cell1);
         table.addCell(new Phrase("",PDFCreator.NORMAL_FONT));
         table.addCell(new Phrase("",PDFCreator.NORMAL_FONT));
-        cell1=new PdfPCell(new Phrase("Contact no 2",PDFCreator.NORMAL_FONT));
+        cell1=new PdfPCell(new Phrase(Main.contactNo2,PDFCreator.NORMAL_FONT));
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(2);
         table.addCell(cell1);
@@ -69,15 +70,15 @@ class HeaderFooter extends PdfPageEventHelper {
         table3.setWidthPercentage(100);
         table3.setLockedWidth(true);
         table3.getDefaultCell().setBorder(Rectangle.NO_BORDER);
-        cell1 = new PdfPCell(new Phrase("Company Name\n", SMALL_BOLD2));
+        cell1 = new PdfPCell(new Phrase(Main.companyName+"\n", SMALL_BOLD2));
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(1);
         table3.addCell(cell1);
-        cell1 = new PdfPCell(new Phrase("Deals in Fancy & Branded Suiting, Shirting, Shits & Sherwani\n", NORMAL_FONT));
+        cell1 = new PdfPCell(new Phrase(Main.companyTagLine+"\n", NORMAL_FONT));
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(1);
         table3.addCell(cell1);
-        cell1=new PdfPCell(new Phrase("Address\n", NORMAL_FONT));
+        cell1=new PdfPCell(new Phrase(Main.address+"\n", NORMAL_FONT));
         cell1.setBorder(Rectangle.NO_BORDER);
         cell1.setHorizontalAlignment(1);
         table3.addCell(cell1);
@@ -96,7 +97,7 @@ class HeaderFooter extends PdfPageEventHelper {
         table1.getDefaultCell().setBorder(Rectangle.BOX);
         table1.addCell(new Phrase(" \n\n\n\n\nReceiver's Sign.",PDFCreator.NORMAL_FONT));
         table1.addCell(new Phrase(" \n\n\n\n",PDFCreator.NORMAL_FONT));
-        cell1=new PdfPCell(new Phrase(" \n\n\n\nFor,Company Name", SMALL_BOLD1));
+        cell1=new PdfPCell(new Phrase(" \n\n\n\nFor, "+Main.companyName, SMALL_BOLD1));
         cell1.setHorizontalAlignment(2);
         table1.addCell(cell1);
         //table1.addCell(String.format("Page %d ", writer.getPageNumber()));

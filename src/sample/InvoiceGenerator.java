@@ -55,10 +55,10 @@ public class InvoiceGenerator {
         try {
             path = "BillingApplication/printout/"+pdfFilename+".pdf";
             docWriter = PdfWriter.getInstance(doc , new FileOutputStream(path));
-            doc.addAuthor("Author name");
+            doc.addAuthor(Main.authorName);
             doc.addCreationDate();
             doc.addProducer();
-            doc.addCreator("creatorDomain.COM");
+            doc.addCreator(Main.creatorDomain);
             doc.addTitle("Invoice");
             doc.setPageSize(PageSize.A5);
             doc.open();

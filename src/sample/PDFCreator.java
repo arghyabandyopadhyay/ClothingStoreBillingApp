@@ -31,7 +31,7 @@ public class PDFCreator {
     public static void addMetaData(Document document, String sqlXMLFileName) {
         document.addTitle("Invoice");
         document.addSubject("");
-        document.addAuthor("Author Name");
+        document.addAuthor(Main.authorName);
     }
     public static void addContent(Document document, List<Item> dataObjList,String pdfFilename,String name,String now,String mno,String ddate,double t,double adv,double sOff) throws DocumentException {
         generateHeader(document,pdfFilename,name,now,mno,ddate);

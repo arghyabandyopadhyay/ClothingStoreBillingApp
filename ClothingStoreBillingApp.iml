@@ -7,11 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="library" name="Clothing Store Billing App1" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
     <orderEntry type="library" name="Library" level="project" />
-    <orderEntry type="library" name="Clothing Store Billing App" level="project" />
-    <orderEntry type="library" name="Javafx" level="application" />
   </component>
 </module>
