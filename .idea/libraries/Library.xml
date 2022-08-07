@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Library">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/runner/Library/itextpdf-5.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/xmpbox-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/pdfbox-tools-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/preflight-app-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/preflight-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/pdfbox-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/fontbox-2.0.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/runner/Library/pdfbox-app-2.0.19.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

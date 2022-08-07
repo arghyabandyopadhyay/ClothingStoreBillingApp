@@ -1,0 +1,42 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ClothingStoreBillingApp:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ClothingStoreBillingApp_jar</output-path>
+    <root id="archive" name="ClothingStoreBillingApp.jar">
+      <element id="module-output" name="ClothingStoreBillingApp" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/xmpbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/preflight-app-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/pdfbox-tools-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/fontbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/itextpdf-5.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/preflight-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/pdfbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/dist/lib/pdfbox-app-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Clothing Store Billing App.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/javafx-sdk-18.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/out/artifacts/Clothing_Store_Billing_App_jar/Clothing Store Billing App.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/itextpdf-5.4.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/xmpbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/pdfbox-tools-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/preflight-app-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/preflight-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/pdfbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/fontbox-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/runner/Library/pdfbox-app-2.0.19.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx-swt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.web.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.base.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.fxml.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.media.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.controls.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/JDK/javafx-sdk-18.0.2/lib/javafx.graphics.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

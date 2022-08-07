@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="1014.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller2">
+    <children>
+        <TableView fx:id="tbv" layoutX="8.0" layoutY="80.0" prefHeight="455.0" prefWidth="309.0">
+            <columns>
+                <TableColumn fx:id="tbc6" prefWidth="102.99996948242188" text="Bill No." />
+                <TableColumn fx:id="tbc7" prefWidth="107.00001525878906" text="Name" />
+                <TableColumn fx:id="tbc8" prefWidth="97.0" text="Total Amount" />
+            </columns>
+        </TableView>
+        <TableView fx:id="tbv1" layoutX="325.0" layoutY="156.0" prefHeight="202.0" prefWidth="675.0">
+            <columns>
+                <TableColumn fx:id="tbc9" prefWidth="65.0" text="Sr no." />
+                <TableColumn fx:id="tbc10" prefWidth="173.0" text="Item - Item No." />
+                <TableColumn fx:id="tbc11" prefWidth="47.0" text="Qty" />
+                <TableColumn fx:id="tbc12" prefWidth="103.0" text="Type" />
+            <TableColumn fx:id="tbc15" prefWidth="82.0" text="Price" />
+            <TableColumn fx:id="tbc14" prefWidth="96.0" text="Stitch" />
+                <TableColumn fx:id="tbc13" prefWidth="108.0" text="Amount" />
+            </columns>
+        </TableView>
+        <TextField fx:id="tf12" editable="false" focusTraversable="false" layoutX="682.0" layoutY="128.0" mouseTransparent="true" prefHeight="25.0" prefWidth="128.0" text="0.0" visible="false" />
+        <TextField fx:id="tfTsrNo" editable="false" focusTraversable="false" layoutX="325.0" layoutY="360.0" mouseTransparent="true" prefHeight="25.0" prefWidth="54.0" />
+        <TextField fx:id="tfQty" editable="false" focusTraversable="false" layoutX="568.0" layoutY="360.0" mouseTransparent="true" prefHeight="25.0" prefWidth="54.0" />
+        <TextField fx:id="tfAmount" editable="false" focusTraversable="false" layoutX="912.0" layoutY="360.0" mouseTransparent="true" prefHeight="25.0" prefWidth="86.0" />
+        <TextField fx:id="descTf" layoutX="326.0" layoutY="92.0" prefHeight="25.0" prefWidth="128.0" promptText="Description:" visible="false" />
+        <TextField fx:id="descTf1" layoutX="461.0" layoutY="92.0" prefHeight="25.0" prefWidth="75.0" promptText="Item no.:" visible="false" />
+        <TextField fx:id="qtyTf" layoutX="542.0" layoutY="92.0" prefHeight="25.0" prefWidth="54.0" promptText="Qty.:" visible="false" />
+        <TextField fx:id="descTf11" layoutX="600.0" layoutY="92.0" prefHeight="25.0" prefWidth="75.0" promptText="Type:" visible="false" />
+        <TextField fx:id="pTf" focusTraversable="false" layoutX="682.0" layoutY="92.0" prefHeight="25.0" prefWidth="128.0" promptText="Price:" visible="false" />
+        <TextField fx:id="descTf111" layoutX="813.0" layoutY="92.0" prefHeight="25.0" prefWidth="86.0" promptText="Stitch:" visible="false" />
+        <Button fx:id="add" layoutX="906.0" layoutY="90.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" text="Add" visible="false" />
+        <Button fx:id="deleteButton" layoutX="955.0" layoutY="90.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="49.0" text="Del" visible="false" />
+        
+        <Label layoutX="326.0" layoutY="15.0" mouseTransparent="true" prefHeight="30.0" prefWidth="477.0" text="Details:-">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font>
+        </Label>
+        <Button fx:id="prntInvoice" layoutX="325.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="183.0" text="Print Invoice" />
+        <DatePicker fx:id="dp" editable="false" focusTraversable="false" layoutX="7.0" layoutY="18.0" prefHeight="25.0" prefWidth="112.0" />
+        <Button fx:id="fetch" layoutX="241.0" layoutY="17.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="46.0" text="Filter" />
+        <Label fx:id="lb2" layoutX="8.0" layoutY="547.0" prefHeight="17.0" prefWidth="309.0" />
+        <Button fx:id="all" layoutX="287.0" layoutY="17.0" mnemonicParsing="false" text="All" />
+      <TextField fx:id="nFilter" layoutX="123.0" layoutY="17.0" prefHeight="25.0" prefWidth="112.0" promptText="Name" />
+      <TextArea fx:id="tA2" editable="false" focusTraversable="false" layoutX="326.0" layoutY="417.0" prefHeight="116.0" prefWidth="675.0" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font></TextArea>
+      <TextField fx:id="date1" editable="false" focusTraversable="false" layoutX="508.0" layoutY="18.0" prefHeight="25.0" prefWidth="162.0" />
+      <Button fx:id="deleteAll" layoutX="8.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="309.0" text="Delete All" />
+        <TextField fx:id="balTf" editable="false" focusTraversable="false" layoutX="912.0" layoutY="387.0" mouseTransparent="true" prefHeight="25.0" prefWidth="87.0" text="0.0" />
+        <TextField fx:id="advTf" editable="false" focusTraversable="false" layoutX="743.0" layoutY="387.0" prefHeight="25.0" prefWidth="126.0" />
+        <Label layoutX="871.0" layoutY="391.0" text="Balance" />
+        <Label layoutX="691.0" layoutY="391.0" text="Advance:" />
+      <Button fx:id="cnfEdit" layoutX="837.0" layoutY="45.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Confirm Edit" visible="false" />
+      <Button fx:id="strtEdit" layoutX="837.0" layoutY="16.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" text="Edit" />
+      <Label layoutX="833.0" layoutY="364.0" text="Total Amount" />
+      <Label layoutX="505.0" layoutY="391.0" prefHeight="17.0" prefWidth="75.0" text="Final Amount:" />
+      <TextField fx:id="tfAmount1" editable="false" focusTraversable="false" layoutX="590.0" layoutY="387.0" mouseTransparent="true" prefHeight="25.0" prefWidth="86.0" />
+      <TextField fx:id="setOff" editable="false" focusTraversable="false" layoutX="372.0" layoutY="387.0" prefHeight="25.0" prefWidth="87.0" />
+      <Label layoutX="325.0" layoutY="391.0" text="Set Off:" />
+      <Label fx:id="dscLbl" layoutX="328.0" layoutY="72.0" prefHeight="17.0" prefWidth="97.0" text="Description:" visible="false" />
+      <Label fx:id="itemLbl" layoutX="462.0" layoutY="74.0" prefHeight="17.0" prefWidth="75.0" text="Item no.:" visible="false" />
+      <Label fx:id="qtyLbl" layoutX="543.0" layoutY="72.0" prefHeight="17.0" prefWidth="54.0" text="Qty.:" visible="false" />
+      <Label fx:id="typLbl" layoutX="598.0" layoutY="74.0" prefHeight="17.0" prefWidth="75.0" text="Type:" visible="false" />
+      <Label fx:id="prLbl" layoutX="682.0" layoutY="74.0" prefHeight="17.0" prefWidth="128.0" text="Price:" visible="false" />
+      <Label fx:id="stLbl" layoutX="813.0" layoutY="72.0" prefHeight="17.0" prefWidth="86.0" text="Stitch:" visible="false" />
+      <DatePicker fx:id="dp1" disable="true" editable="false" layoutX="682.0" layoutY="16.0" prefHeight="25.0" prefWidth="153.0" />
+      <TextField fx:id="date" focusTraversable="false" layoutX="683.0" layoutY="16.0" mouseTransparent="true" prefHeight="25.0" prefWidth="128.0" />
+    </children>
+</Pane>
