@@ -2,9 +2,14 @@
 
 ### Prerequisite
 
-JDK:openjdk-18.0.2
+JDK: openjdk-18.0.2
 
-JavaFx:javafx-sdk-18.0.2
+JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/
+
+### Try running application
+
+1. go to runner
+2. double click ClothingStoreBillingApp
 
 ### Steps to Configure applications according to your needs
 
