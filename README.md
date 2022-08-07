@@ -9,7 +9,7 @@ JavaFx: javafx-sdk-18.0.2(sdk stored in runner/Library/)
 ### Try running application
 
 1. go to runner
-2. double click ClothingStoreBillingApp
+2. double click ClothingStoreBillingApp.bat file
 
 ### Steps to Configure applications according to your needs
 
