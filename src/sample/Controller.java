@@ -387,6 +387,7 @@ public class Controller implements Initializable {
             JOptionPane.showMessageDialog(null,"invoice_amount.txt file is missing","Error", JOptionPane.ERROR_MESSAGE);
         }
         String lastInvoice="";
+        assert sc != null;
         if(sc.hasNextLine()) lastInvoice=sc.nextLine();
         else
         {

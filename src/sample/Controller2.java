@@ -14,15 +14,11 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyCodeCombination;
 import javafx.scene.input.KeyCombination;
 
-import javax.print.PrintException;
 import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.HashSet;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
@@ -70,27 +66,27 @@ public class Controller2 implements Initializable {
     @FXML
     private TableView <Invoice_amount> tbv = new TableView<Invoice_amount>();
     @FXML
-    TableView tbv1;
+    TableView<Item> tbv1;
     @FXML
-    TableColumn tbc6;
+    TableColumn<Invoice_amount, String> tbc6;
     @FXML
-    TableColumn tbc7;
+    TableColumn<Invoice_amount, String> tbc7;
     @FXML
-    TableColumn tbc8;
+    TableColumn<Invoice_amount, Double> tbc8;
     @FXML
-    TableColumn tbc9;
+    TableColumn<Item, Integer> tbc9;
     @FXML
-    TableColumn tbc10;
+    TableColumn<Item, String> tbc10;
     @FXML
-    TableColumn tbc11;
+    TableColumn<Item, Double> tbc11;
     @FXML
-    TableColumn tbc12;
+    TableColumn<Item, String> tbc12;
     @FXML
-    TableColumn tbc13;
+    TableColumn<Item, Double> tbc13;
     @FXML
-    TableColumn tbc14;
+    TableColumn<Item, Double> tbc14;
     @FXML
-    TableColumn tbc15;
+    TableColumn<Item, Double> tbc15;
     @FXML
     TextField tfTsrNo;
     @FXML
@@ -125,7 +121,6 @@ public class Controller2 implements Initializable {
     DatePicker dp;
     private double adv=0.0;
     double st=0;
-    private double tPrice=0.0;
     final KeyCombination keyComb1 = new KeyCodeCombination(KeyCode.P,
             KeyCombination.CONTROL_ANY);
     final KeyCombination keyComb2 = new KeyCodeCombination(KeyCode.A,
@@ -137,7 +132,7 @@ public class Controller2 implements Initializable {
             FXCollections.observableArrayList();
     private final static ObservableList<Item> data =
             FXCollections.observableArrayList();
-    private String array[]=getArray();
+    private final String[] array =getArray();
     int tSrNo=0,Qty=0;
     double t=0.0;
     double sOff=0;
@@ -159,7 +154,7 @@ public class Controller2 implements Initializable {
                 date_= i.format(dtf).toString();
                 date.setText(date_);
             }
-            catch(Exception e)
+            catch(Exception ignored)
             {
             }
         });
@@ -344,7 +339,7 @@ public class Controller2 implements Initializable {
         });
         fetch.setOnMouseClicked(e->fetch());
         prntInvoice.setOnMouseClicked(mouseEvent -> askPrint());
-        TableView.TableViewSelectionModel selectionModel = tbv.getSelectionModel();
+        TableView.TableViewSelectionModel<Invoice_amount> selectionModel = tbv.getSelectionModel();
         selectionModel.setSelectionMode(SelectionMode.MULTIPLE);
         all.setOnAction(e->fetchDetails());
         tbv.setOnKeyReleased(keyEvent ->{
@@ -395,8 +390,10 @@ public class Controller2 implements Initializable {
                     JOptionPane.showMessageDialog(null,"invoice_amount.txt file is missing","Error", JOptionPane.ERROR_MESSAGE);
                 }
                 String str=null;
-                while(sc.hasNextLine())
+                while(true)
                 {
+                    assert sc != null;
+                    if (!sc.hasNextLine()) break;
                     str=sc.nextLine();
                     if(str.substring(0,str.indexOf(':')).equals(selectedItem.getDesc()))
                     {
@@ -418,6 +415,7 @@ public class Controller2 implements Initializable {
                 {
                     // if line is not present in delete.txt
                     // write it to output.txt
+                    assert str != null;
                     if(!str.contains(line1))
                         pw.println(line1);
 
@@ -525,11 +523,13 @@ public class Controller2 implements Initializable {
             JOptionPane.showMessageDialog(null,"invoice_options.txt file is missing","Error", JOptionPane.ERROR_MESSAGE);
         }
         int l=0,i=0;
-        while (sc.hasNextLine()){
+        while (true){
+            assert sc != null;
+            if (!sc.hasNextLine()) break;
             sc.nextLine();
             ++l;
         }
-        String ar[]=new String[l];
+        String[] ar =new String[l];
         try {
             sc = new Scanner(myReader);
         } catch (FileNotFoundException e) {
@@ -611,11 +611,11 @@ public class Controller2 implements Initializable {
             descTf111.setText("0.0");
         }
         double sub=a*price;
-        tPrice=sub+stitchPrice;
+        double tPrice = sub + stitchPrice;
         tSrNo++;
         Qty+=a;
-        t+=tPrice;
-        data.add(new Item(tSrNo,s+" - "+itemNo,a,type,tPrice,price,stitchPrice));
+        t+= tPrice;
+        data.add(new Item(tSrNo,s+" - "+itemNo,a,type, tPrice,price,stitchPrice));
         tbc9.setCellValueFactory(
                 new PropertyValueFactory<Item, Integer>("srNo"));
         tbc10.setCellValueFactory(
@@ -648,11 +648,10 @@ public class Controller2 implements Initializable {
 
     private void deleteFromTable1() {
         ObservableList<Item> selectedItem = tbv1.getSelectionModel().getSelectedItems();
-        for(int i1=0;i1<selectedItem.size();i1++)
-        {
+        for (Item item : selectedItem) {
             tSrNo--;
-            t-=selectedItem.get(i1).getTp();
-            Qty-=selectedItem.get(i1).getQty();
+            t -= item.getTp();
+            Qty -= item.getQty();
         }
         tbv1.getItems().removeAll(selectedItem);
 
@@ -684,8 +683,9 @@ public class Controller2 implements Initializable {
     public static boolean deleteDir(File dir) {
         if (dir.isDirectory()) {
             String[] children = dir.list();
-            for (int i = 0; i < children.length; i++) {
-                boolean success = deleteDir (new File(dir, children[i]));
+            assert children != null;
+            for (String child : children) {
+                boolean success = deleteDir(new File(dir, child));
 
                 if (!success) {
                     return false;
@@ -713,7 +713,9 @@ public class Controller2 implements Initializable {
                 new PropertyValueFactory<Invoice_amount, String>("qty"));
         tbc8.setCellValueFactory(
                 new PropertyValueFactory<Invoice_amount, Double>("po1"));
-        while (sc.hasNextLine()) {
+        while (true) {
+            assert sc != null;
+            if (!sc.hasNextLine()) break;
             String s=sc.nextLine();
             int firstIndex=s.indexOf(':');
             int secondIndex=(s.indexOf(':',firstIndex+1));
@@ -769,7 +771,9 @@ public class Controller2 implements Initializable {
             if((i==null)&&(!name.isEmpty()))
             {
 
-                while (sc.hasNextLine()) {
+                while (true) {
+                    assert sc != null;
+                    if (!sc.hasNextLine()) break;
                     String s=sc.nextLine();
                     int firstIndex=s.indexOf(':');
                     int secondIndex=(s.indexOf(':',firstIndex+1));
@@ -796,10 +800,13 @@ public class Controller2 implements Initializable {
             }
 
             dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            assert i != null;
             String s1 = getInvoice(i.format(dtf).toString());
-            if(i!=null&&(!name.isEmpty()))
+            if(!name.isEmpty())
             {
-                while (sc.hasNextLine()) {
+                while (true) {
+                    assert sc != null;
+                    if (!sc.hasNextLine()) break;
                     String s=sc.nextLine();
                     int firstIndex=s.indexOf(':');
                     int secondIndex=(s.indexOf(':',firstIndex+1));
@@ -822,9 +829,11 @@ public class Controller2 implements Initializable {
                     }
                 }
             }
-            if(i!=null&&name.isEmpty())
+            if(name.isEmpty())
             {
-                while (sc.hasNextLine()) {
+                while (true) {
+                    assert sc != null;
+                    if (!sc.hasNextLine()) break;
                     String s=sc.nextLine();
                     int firstIndex=s.indexOf(':');
                     int secondIndex=(s.indexOf(':',firstIndex+1));
@@ -865,8 +874,7 @@ public class Controller2 implements Initializable {
     }
 
     private String getInvoice(String toString) {
-        String s=toString.replace('/','_');
-        return s;
+        return toString.replace('/','_');
     }
 
     private void fetchDetail() {
@@ -907,6 +915,7 @@ public class Controller2 implements Initializable {
                 new PropertyValueFactory<Item, Double>("price"));
         tbc14.setCellValueFactory(
                 new PropertyValueFactory<Item, Double>("stitch"));
+        assert sc != null;
         sc.useDelimiter(":\n");
         while (sc.hasNext()) {
             String s=sc.nextLine();
@@ -922,9 +931,9 @@ public class Controller2 implements Initializable {
             String s1=s.substring(secondIndex+1,thirdIndex);
             double a=Double.parseDouble(s.substring(thirdIndex+1,fourthIndex));
             String price=s.substring(fourthIndex+1,fifthIndex);
-            Double tPrice=Double.parseDouble(s.substring(fifthIndex+1,sixthIndex));
-            Double price1=Double.parseDouble(s.substring(sixthIndex+1,seventhIndex));
-            Double stitchPrice=Double.parseDouble(s.substring(seventhIndex+1));
+            double tPrice=Double.parseDouble(s.substring(fifthIndex+1,sixthIndex));
+            double price1=Double.parseDouble(s.substring(sixthIndex+1,seventhIndex));
+            double stitchPrice=Double.parseDouble(s.substring(seventhIndex+1));
 
             tSrNo++;
             Qty+=a;
